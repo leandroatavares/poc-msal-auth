@@ -1,0 +1,17 @@
+<p>{{userData.username}} --- home-page works!</p>
+CEP: <input [(ngModel)]="cep" type="text" maxlength="8">
+
+<button (click)="callCep()">address</button>
+<button (click)="callProfile()">profile</button>
+<button (click)="callMessages()">messages</button>
+<button (click)="listDrive()">driveData</button>
+<button (click)="logout()">logout</button>
+
+
+
+<p *ngIf="profileData">Profile: {{profileData | json}}</p>
+<p *ngIf="driveData">Driver: {{driveData | json}}</p>
+<p *ngIf="address">Driver: {{address | json}}</p>
+<div *ngIf="messages">
+  <p *ngFor="let mail of messages" [innerHTML]="mail.body.content"></p>
+</div>
